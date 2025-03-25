@@ -1,20 +1,24 @@
 
-Bash
-composer require predis/predis
-Configurar o Cache e a Conexão Redis:
-No seu arquivo .env:
-Snippet de código
 
-CACHE_DRIVER=redis
-SESSION_DRIVER=redis # Opcional, mas recomendado para performance
+    ```bash
+    composer require predis/predis
+    # Ou certifique-se que a extensão PHP Redis está instalada e habilitada no servidor
+    ```
 
-REDIS_HOST=127.0.0.1
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-REDIS_CLIENT=predis # Ou phpredis se estiver usando a extensão PHP
-Verifique config/cache.php e config/database.php para garantir que as configurações do Redis estão corretas.
-Controlador CheckoutController.php
-PHP
+    * No seu arquivo `.env`:
+        ```dotenv
+        CACHE_DRIVER=redis
+        SESSION_DRIVER=redis # Opcional, mas recomendado para performance
+
+        REDIS_HOST=127.0.0.1
+        REDIS_PASSWORD=null
+        REDIS_PORT=6379
+        REDIS_CLIENT=predis # Ou phpredis se estiver usando a extensão PHP
+        ```
+
+
+
+```php
 <?php
 
 namespace App\Http\Controllers;
@@ -253,10 +257,11 @@ class CheckoutController extends Controller
         });
     }
 }
- Invalidação de Cache 
+```
 
-PHP
 
+
+```php
 <?php
 
 namespace App\Observers;
@@ -305,10 +310,11 @@ class ProductObserver
         // Lógica similar para outros caches relevantes
     }
 }
-Registro do Observer (App\Providers\EventServiceProvider.php):
+```
 
-PHP
 
+
+```php
 <?php
 
 namespace App\Providers;
@@ -334,3 +340,5 @@ class EventServiceProvider extends ServiceProvider
 
     // ... boot method
 }
+```
+
