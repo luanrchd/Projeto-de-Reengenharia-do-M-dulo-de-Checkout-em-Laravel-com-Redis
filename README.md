@@ -15,8 +15,9 @@ Identificação de Gargalos
 | Carrinho de Compras      | 35%         | Média        |  
 | Validação de Estoque     | 25%         | Baixa        |  
 | Processamento de Pagamento | 20%       | Alta         |  
-| Cálculo de Frete         | 20%         | Média        |  
-Fase 2: Implementação Técnica  
+| Cálculo de Frete         | 20%         | Média        | 
+
+ Implementação Técnica  
  Otimização de Queries  
 / Antes (N+1 problem):
 $cart = Cart::find($id);
@@ -67,6 +68,8 @@ Testes de Performance
 | Checkout Simples      | 1.8s   | 0.9s   | 50%   |  
 | Carrinho com 50 itens | 3.2s   | 1.7s   | 47%   |  
 | Pico de 100 req/s     | 12s    | 4.8s   | 60%   |  
+
+ 
  Ferramentas de Validação  
  K6.io(teste de carga)  
  Laravel Dusk (testes E2E)  
