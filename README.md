@@ -1,4 +1,3 @@
- Projeto-de-Reengenharia-do-M-dulo-de-Checkout-em-Laravel-com-Redis
 Projeto de Reengenharia do Módulo de Checkout em Laravel com Redis   Meta: Aumentar eficiência em 40% via otimização de queries e cache 
  Análise do Sistema Atual 
 Identificação de Gargalos  
